@@ -1,4 +1,4 @@
-#Zadanie_2
+#Dodawanie_poprawek
 unzip lista.zip
 dos2unix lista.txt lista-pop.txt
 diff lista.txt lista-pop.txt | less
