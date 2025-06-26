@@ -170,14 +170,49 @@ zip archiwum_foto rozpakowane_foto/*.jpg
 
 <br>
 
+#### **Utworzenie katalogu portfolio**
+mkdir -p portfolio
+
+<br>
+
+#### **Wejście do katalogu rozpakowane_foto**
+cd rozpakowane_foto
+
+<br>
+
+#### **Wylosowanie 8 plików do katalogu portfolio**
+ls *.jpg | shuf | head -8 | while read file; do cp "$file" ../portfolio/; done
+
+<br>
+
+#### **Wyjście z katalogu rozpakowane_foto**
+cd ..
+
+<br>
+
+#### **Tworzenie obrazu układając fotografię w siatke 2 na 4**
+magick montage -label %f portfolio/*.jpg -tile 2x4 -geometry 1235x870+5+5 -pointsize 20 portfolio.jpg
+
+<br>
+
+#### **Przekształcenie obrazu w plik PDF**
+magick portfolio.jpg -density 300 -resize 2480x3508 -gravity center -extent 2480x3508 portfolio_a4.pdf
+
+<br>
+
 ## Zadanie 9 - Porządki w kopiach zapasowych
 
 <br>
 
 #### **Skrypt w pliku zadanie7.sh**
 
+<br>
+
 ## Zadanie 10 - Galeria dla grafika
 
 <br>
 
 #### **Skrypt w pliku zadanie8.sh**
+
+<br>
+
